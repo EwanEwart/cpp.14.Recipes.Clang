@@ -52,6 +52,7 @@ int main()
   std::cout << "abcdef"s.substr(1, 4) << '\n';
 
 #endif
+  // use string literals to initialise STL string objects
   // strings: look at main.exe using a hex editor of vsc (visual studio code)
   auto s11 {sl1};
   auto s12 {sl1};

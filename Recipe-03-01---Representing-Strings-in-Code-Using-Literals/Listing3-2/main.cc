@@ -37,7 +37,11 @@ Use c++14 string literals !!!
     }
     catch (const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << '\n'; // doesn't get here: catch signal & throw
+    }
+    catch(...)
+    {
+        std::cerr << "An unexpected exception has occurred." << std::endl; // doesn't get here: catch signal & throw
     }
 
 
