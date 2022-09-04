@@ -26,10 +26,13 @@ void print_with_zeros(auto const note, std::string const& s)
 
 // anonymous namespace / global ns
 namespace
-{  // the table of strings holding strings
+{  // the table of strings holding these string literals
   string const STRING{ "(newline...)\n--- This is a string embedded in an executable (newline)...\nby the compiler (newline...)\nnamely the \"table of strings\".(newline...)\n"s };
   string const AUTHOR{ "--- (c) Ewan Ewart(newline...)\n"s };
   string const DATE{ "--- 2022.05.29.19.55(newline...)\n"s };
+  auto sl1 {"string literal s1"s};
+  auto sl2 {"string literal s2"s};
+  auto sl3 {"string literal s3"s};
 }
 
 int main()
@@ -49,6 +52,16 @@ int main()
   std::cout << "abcdef"s.substr(1, 4) << '\n';
 
 #endif
+  // strings: look at main.exe using a hex editor of vsc (visual studio code)
+  auto s11 {sl1};
+  auto s12 {sl1};
+  auto s13 {sl1};
+  auto s21 {sl2};
+  auto s22 {sl2};
+  auto s23 {sl2};
+  auto s31 {sl3};
+  auto s32 {sl3};
+  auto s33 {sl3};
 
   return 0;
 }
