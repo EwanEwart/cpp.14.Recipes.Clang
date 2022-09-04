@@ -1,0 +1,217 @@
+14-1. An Introduction to GLFW
+=============================
+Plain OpenGLFW Window
+---------------------
+You’re writing a cross platform application
+containing 3D graphics,
+and you want a fast way to get up and running
+opening a window for rendering your graphics.
+
+Solution
+--------
+GLFW abstracts out the task
+of creating and managing a window
+for many popular operating systems.
+
+How It Works
+------------
+The GLFW API is written in the C programming language
+and can therefore be used in C++ applications without issue.
+
+The API is available to download from www.glfw.org.
+
+You can also read the documentation of the API at the same web site.
+
+The instructions
+to configure and build
+a GLFW library
+change frequently
+and so aren’t included with this chapter.
+
+At the time of this writing,
+the most up-to-date instructions
+for building GLFW
+can be found at www.glfw.org/docs/latest/compile.html.
+
+The instructions for GLFW currently
+involve using CMake to build a project
+that can then be used to compile a library
+that you can link into your own project.
+
+Once you have this up and running,
+you can use the code in Listing 14-1
+to run a program
+that initialises OpenGL
+and creates a window for your program.
+
+The code in Listing 14-1 is the sample program
+supplied on the GLFW web site
+to ensure that your build is working properly.
+
+It initialises the glfw library with a call to
+
+glfwInit.
+
+A window is created using the
+
+glfwCreateWindow
+
+function.
+
+The sample creates a window with 640 × 480 resolution
+and the title "Plain OpenGLFW Window".
+
+If the window creation fails,
+then the
+
+glfwTerminate
+
+function is called.
+
+If it’s successful,
+the program calls
+
+glfwMakeContextCurrent.
+
+The OpenGL API supports multiple rendering contexts,
+and you have to ensure
+that yours is the current context
+when you render your graphics.
+
+The main loop of the program continues
+until the
+
+glfwWindowShouldClose
+
+function returns true.
+
+The
+
+glfwSwapBuffers
+
+function is responsible for
+swapping the front buffer
+with the back buffer.
+
+Double-buffered rendering is useful
+to prevent the user from seeing
+unfinished frames of animation.
+
+The graphics card can display one buffer
+while the program is rendering into a second.
+
+These buffers are swapped at the end of each frame.
+
+The
+
+glfwPollEvents
+
+function
+is responsible
+for communicating with the operating system
+and receiving any messages.
+
+The program ends
+with a call to
+
+glfwDestroyWindow(window);
+
+and
+
+glfwTerminate()
+
+to shut everything down
+
+
+
+The OpenGL API provides a lot of its functionality
+through
+
+extensions,
+
+and this means the functions
+you’re using may not be supported directly
+by the platform you’re working on.
+
+Fortunately, the
+
+-- GLEW -- library
+
+is available
+to help with using
+
+OpenGL extensions
+
+on multiple platforms.
+
+Again,
+the instructions for obtaining, building, and linking GLEW
+change from time to time.
+
+The latest information may be obtained from the GLEW web site at
+
+http://glew.sourceforge.net
+
+Once you have GLEW up and running,
+you can initialise the library
+using the
+
+glewInit
+
+function call
+shown in Listing 14-2.
+
+Listing 14-2. Initializing GLEW
+
+
+$ apt show libglew-dev
+Package: libglew-dev
+Version: 2.1.0-4
+Priority: optional
+Section: universe/libdevel
+Source: glew
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Alastair McKinstry <mckinstry@debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 1,378 kB
+Provides: libglew1.5-dev, libglew1.6-dev
+Depends: libgl1-mesa-dev | libgl-dev, libglew2.1 (= 2.1.0-4), libglu1-mesa-dev | libglu-dev
+Conflicts: libglew1.6-dev
+Homepage: http://glew.sourceforge.net
+Download-Size: 134 kB
+APT-Manual-Installed: yes
+APT-Sources: http://us.archive.ubuntu.com/ubuntu disco/universe amd64 Packages
+Description: OpenGL Extension Wrangler - development environment
+ The OpenGL Extension Wrangler, GLEW for short, is a library that
+ handles initialization of OpenGL extensions in a portable and simple
+ way. Once the program initializes the library and checks the
+ availability of extensions, it can safely call the entry points defined
+ by the extension. Currently GLEW supports almost all the extensions
+ found in the OpenGL extension registry (http://www.opengl.org/registry).
+ .
+ This package contains the development documentation as well as the
+ required header files.
+
+
+It’s important that this step occurs
+after you have a valid and current OpenGL context,
+because the GLEW library relies on this
+in order to load the most common extensions
+you may be using from the OpenGL API.
+
+There are sample applications accompanying this book
+that have both GLEW and GLFW included and configured.
+
+You should download these
+if you would like to see a project
+that has been configured to work with these libraries.
+
+In addition, excellent documentation is available
+at the libraries’ web sites:
+
+- GLEW
+http://glew.sourceforge.net/install.html
+
+- GLFW
+http://www.glfw.org/download.html

@@ -1,0 +1,24 @@
+Vehicle defines a virtual method
+named GetNumberOfWheels
+that returns the value 2.
+
+Car overwrites this method to return 4.
+
+This example ignores the fact
+that not all cars have four wheels,
+and declares
+that the method is --final--.
+
+No other classes
+deriving from Car
+are allowed to overwrite the same method.
+
+This makes sense for the application
+if the requirements only require support for four-wheeled cars.
+
+The compiler will throw an error
+when it reaches any class
+that derives from Car or derives from any other class
+that has Car in its hierarchy
+and that tries to overwrite the GetNumberOfWheels method.
+

@@ -1,0 +1,6 @@
+// build files
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.pdb

@@ -1,0 +1,3 @@
+exe Linsting-1-7
+  : [ glob *.cc ]
+  ;

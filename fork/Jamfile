@@ -1,0 +1,6 @@
+import boost ;
+boost.use-project ;
+
+exe forkit
+  : [ glob *.cc ]
+  ;

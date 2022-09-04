@@ -1,0 +1,6 @@
+import boost ;
+boost.use-project ;
+
+exe Listing9-12
+  : [ glob *.cc ]
+  ;

@@ -1,0 +1,29 @@
+The protected Access Specifier
+------------------------------
+The protected access specifier
+allows for a mix of public and private access specifiers.
+
+It acts like a public specifier
+for classes
+that derive from the current class,
+and it acts like a private specifier
+for external code.
+
+Listing 6-4 shows this behaviour.
+
+...
+
+Listing 6-4 shows
+that both Car and Motorcycle
+can access the m_NumberOfWheels variable directly
+from their parent class, Vehicle.
+
+Both classes
+set the m_NumberOfWheels variable
+in their constructors.
+
+The calling code in the main function
+doesn’t have access to this variable
+and therefore has to call
+the GetNumberOfWheels method
+to be able to print this value.

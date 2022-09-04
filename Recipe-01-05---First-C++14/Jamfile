@@ -1,0 +1,6 @@
+import boost ;
+boost.use-project ;
+
+exe Recipe-01-05
+  : [ glob *.cc ]
+  ;

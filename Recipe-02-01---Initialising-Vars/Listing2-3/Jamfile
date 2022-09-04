@@ -1,0 +1,3 @@
+exe Listing2-3
+  : [ glob *.cc ]
+  ;

@@ -1,0 +1,27 @@
+The private Access Specifier
+----------------------------
+Instead of making variables public,
+you can make them private
+and provide public accessors to them.
+
+Listing 6-3 shows the use of a private member variable.
+...
+Listing 6-3. The private Access Specifier
+...
+Listing 6-3 shows the use of the private access specifier
+with the m_NumberOfWheels variable.
+
+The Car and Motorcycle classes
+can no longer access the m_NumberOfWheels variable directly;
+therefore, the Vehicle class
+provides a method
+to initialise the variable through its constructor.
+
+This makes the classes a little harder to work with,
+but adds the benefit
+of not allowing any external code
+direct access to the member variable.
+
+You can see this in the main function:
+the code must get the number of wheels
+through the GetNumberOfWheels accessor method.

@@ -1,0 +1,41 @@
+Recipe 6-5. Preventing Method Overwrites
+========================================
+Problem
+-------
+You have a method
+that you don’t wish to be overwritten
+by deriving classes.
+
+Solution
+--------
+You can use the --final-- keyword
+to prevent classes from overwriting a method.
+
+How It Works
+------------
+The --final-- keyword informs the compiler
+that you don’t want a virtual method
+to be overwritten by a deriving class.
+
+Listing 6-8 shows an example of using the --final-- keyword
+
+...
+
+The GetNumberOfWheels method in the Vehicle class
+uses the --final-- keyword
+to prevent derived classes from trying to overwrite it.
+
+This causes the code in Listing 6-8 to fail to compile,
+because the Car class attempts to overwrite GetNumberOfWheels.
+
+You can comment out this method to compile the code.
+
+The --final-- keyword can also stop
+further overwrites of a method
+in a longer chain.
+
+Listing 6-9 shows how this is possible.
+
+...
+
+

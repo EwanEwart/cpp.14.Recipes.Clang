@@ -1,0 +1,48 @@
+Recipe 6-7. Multiple Inheritance
+================================
+
+Problem
+-------
+You have a class that you wish to derive from more than one parent
+
+Solution
+--------
+C++ supports multiple inheritance.
+
+How It Works
+------------
+You can derive a class from multiple parents
+in C++
+using a comma-separated list of parent classes.
+
+Listing 6-11 shows how this can be achieved.
+
+...
+
+Listing 6-11. Multiple Inheritance
+
+...
+
+The Car and Motorcycle classes
+both derive from multiple parents.
+
+These classes are now both Vehicles and Printables.
+
+You can see the interplay
+between the two parents
+in the overwritten Print methods.
+
+These methods
+both call the overwritten GetNumberOfWheels method
+in Car and Motorcycle.
+
+The main function
+accesses the overwritten Print methods
+using a pointer to a Printable object,
+using polymorphism
+to call the correct Print method
+and also the correct GetNumberOfWheels method
+in Print.
+
+Figure 6-6 shows
+that the output from the program is correct.

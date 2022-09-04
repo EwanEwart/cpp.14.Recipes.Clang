@@ -1,0 +1,61 @@
+Recipe 6-6. Creating Interfaces
+===============================
+Problem
+-------
+You have a base class method
+that should not define any behaviour
+but should simply be overwritten
+by deriving classes.
+
+Solution
+--------
+You can create --pure virtual methods--
+in C++
+that don’t define a method body.
+
+How It Works
+------------
+You can define --pure virtual methods--
+in C++
+by adding  = 0
+to the end of the method signature.
+
+Listing 6-10 shows an example.
+
+....
+
+Listing 6-10. Creating Pure Virtual Methods
+
+...
+
+The Vehicle class defines GetNumberOfWheels
+as a -- pure virtual -- method.
+
+This has the effect of ensuring
+that an object of type Vehicle
+can never be created.
+
+The compiler doesn’t allow this,
+because it doesn’t have a method to call
+for GetNumberOfWheels.
+
+Car and Motorcycle
+both overwrite this method
+and can be instantiated.
+
+You can see this occur in the main function.
+
+Figure 6-5 shows that the methods
+return the correct values for Car and Motorcycle.
+
+A class that contains a pure virtual method
+is known as an --interface--.
+
+If a class inherits from an interface
+and you wish to be able to instantiate that class,
+you must overwrite any -- pure virtual methods -- in the parent.
+
+It’s possible to derive from an interface
+and not overwrite these methods,
+but that derived class can then only
+be used as an interface to further derived classes.
