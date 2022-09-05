@@ -32,8 +32,7 @@ Use c++14 string literals !!!
     {
         cout << EDIT_STRING[0] << endl;
         EDIT_STRING[0] = 'a';
-        int i{ 1 };
-        ++i;
+        std::cout << "-- no exception occurred" << std::endl;
     }
     catch (const std::exception& e)
     {
