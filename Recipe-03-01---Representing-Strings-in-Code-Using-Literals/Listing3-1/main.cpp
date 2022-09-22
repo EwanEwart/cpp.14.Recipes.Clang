@@ -30,9 +30,9 @@ namespace
   string const STRING{ "(newline...)\n--- This is a string embedded in an executable (newline)...\nby the compiler (newline...)\nnamely the \"table of strings\".(newline...)\n"s };
   string const AUTHOR{ "--- (c) Ewan Ewart(newline...)\n"s };
   string const DATE{ "--- 2022.05.29.19.55(newline...)\n"s };
-  auto sl1 {"string literal s1"s};
-  auto sl2 {"string literal s2"s};
-  auto sl3 {"string literal s3"s};
+  auto sl1{ "string literal s1"s };
+  auto sl2{ "string literal s2"s };
+  auto sl3{ "string literal s3"s };
 }
 
 int main()
@@ -41,7 +41,7 @@ int main()
   cout << DATE << endl;
   cout << AUTHOR << endl;
 
-// print_with_zeros > c++17
+  // print_with_zeros > c++17
 #if _MSVC_LANG > CPP_17 || __cplusplus > CPP_17
 
   std::string s1 = "abc\0\0def";
@@ -54,15 +54,15 @@ int main()
 #endif
   // use string literals to initialise STL string objects
   // strings: look at main.exe using a hex editor of vsc (visual studio code)
-  auto s11 {sl1};
-  auto s12 {sl1};
-  auto s13 {sl1};
-  auto s21 {sl2};
-  auto s22 {sl2};
-  auto s23 {sl2};
-  auto s31 {sl3};
-  auto s32 {sl3};
-  auto s33 {sl3};
+  auto s11{ sl1 };
+  auto s12{ sl1 };
+  auto s13{ sl1 };
+  auto s21{ sl2 };
+  auto s22{ sl2 };
+  auto s23{ sl2 };
+  auto s31{ sl3 };
+  auto s32{ sl3 };
+  auto s33{ sl3 };
 
   return 0;
 }
@@ -80,8 +80,6 @@ You can see this string inside the executable created
 from the source in Figure 3-1.
 
 Console session ...
-
-less /tmp/development/bin/c++14-recipes-clang/Recipe-03-01/Listing3-1/clang-linux-3.8.0/debug/threading-multi/Listing3-1
 
 You can use --- string literals ---
 to initialise STL string objects.
