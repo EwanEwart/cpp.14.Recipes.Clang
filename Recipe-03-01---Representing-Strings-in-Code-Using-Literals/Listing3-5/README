@@ -1,0 +1,15 @@
+Listing 3-5. A makefile that Defines NDEBUG
+
+main: main.cpp
+
+clang++ -D NDEBUG -O2 -Werror -std=c++1y main.cpp -o main
+
+At that point
+you will also need to wrap any code,
+which creates or uses any variables of the StringLiteral type.
+
+You should see a problem at this point,
+using this define means
+that you cannot have any string literals in your program.
+
+A better solution is shown in Listing 3-6
