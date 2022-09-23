@@ -5,6 +5,8 @@
             "label": "C/C++: cl.exe build active file",
             "command": "cl.exe",
             "args": [
+                "/std:c++14",
+                "/WX",
                 "/DDEBUG",
                 "/Zi",
                 "/EHsc",
