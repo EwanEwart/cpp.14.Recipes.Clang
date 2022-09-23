@@ -4,7 +4,7 @@ using namespace std;
 
 namespace
 {
-    const char* const STRING{ "This is a string" };
+    char const * const STRING{ "This is a string" };
     char const * const EDIT_STRING{ "Attempt to Edit" }; // get pre-compile warnings
     // char* EDIT_STRING{ "Attempt to Edit" };
 }

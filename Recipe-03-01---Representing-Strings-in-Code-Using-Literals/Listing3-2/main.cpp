@@ -4,9 +4,9 @@ using namespace std;
 
 namespace
 {
-    auto EXCEPTION_FALSE{ "-- no exception has occurred --"s };
-    auto EXCEPTION_TRUE{ "-- an unexpected exception has occurred --"s };
-    char const* const STRING{ "This is a string" };
+    auto EXCEPTION_FALSE{ "-- no exception has occurred --"s };             // new literal string
+    auto EXCEPTION_TRUE{ "-- an unexpected exception has occurred --"s };   // new literal string
+    char const* const STRING{ "This is an old style string literal: char const* const" };
     // char* EDIT_STRING{ "Attempt to Edit" }; // old style literal non const
     char const* const EDIT_STRING{ "Attempt to Edit" }; // old style literal : const
     // char const* const EDIT_STRING{ "Attempt to Edit" };
